@@ -1,3 +1,0 @@
-pwd
-ls
-git version
