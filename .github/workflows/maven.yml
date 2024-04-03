@@ -30,6 +30,12 @@ jobs:
     - name: Test with Maven
       run: mvn clean test site
 
+    - name: Upload artefatos de teste
+      uses: actions/upload-artifact@v3
+      with:
+          name: relatorio-teste
+          path: target/site/
+
   build:
 
     runs-on: ubuntu-latest
