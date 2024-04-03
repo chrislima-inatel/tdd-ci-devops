@@ -1,0 +1,3 @@
+echo "HAHAHAHAHAHAH"
+ls
+pwd
