@@ -10,7 +10,6 @@ public class Brownie {
 		this.nome = nome;
 		this.qtd = qtd;
 		this.valor = valor;
-		System.out.println("Git...");
 	}
 
 	public String getNome() {
