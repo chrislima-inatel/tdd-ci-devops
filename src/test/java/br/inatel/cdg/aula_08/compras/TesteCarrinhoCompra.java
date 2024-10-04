@@ -73,5 +73,23 @@ public class TesteCarrinhoCompra {
 
 	}
 
+	@Test
+	public void testIntegracaoCupom2() throws NumeroNegativoException {
+
+		Brownie bw1 = new Brownie("Brownie Nutella", 6, 150);
+		Brownie bw2 = new Brownie("Brownie Doce de Leite", 4, 100);
+
+		CarrinhoCompra carrinho = new CarrinhoCompra();
+		CupomDesconto cupom = new CupomDesconto(0.20);
+		carrinho.setCupom(cupom);
+
+		carrinho.adiciona(bw1);
+		carrinho.adiciona(bw2);
+		carrinho.somaTotal();
+
+		assertEquals(200, carrinho.somaTotal(), 0.1);
+
+	}
+
 }
 
