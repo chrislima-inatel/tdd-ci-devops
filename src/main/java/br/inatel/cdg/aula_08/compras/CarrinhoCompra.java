@@ -23,7 +23,7 @@ public class CarrinhoCompra {
 	}
 
 	public double somaTotal() {
-		double total = 0;
+		double total = 10;
 		for (Brownie brownie : brownies) {
 			total += brownie.getValor();
 		}
