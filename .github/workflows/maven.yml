@@ -124,9 +124,9 @@ jobs:
 
 
   # ──────────────────────────────────────────
-  # ETAPA 3 — COBERTURA DE CÓDIGO
-  # Executa os testes via JaCoCo e gera
-  # um relatório HTML de cobertura.
+  # ETAPA 4 — NOTIFICAÇÃO
+  # EXECUTA UM SCRIPT EXTERNO AO PIPELINE
+  # PARA ENVIAR NOTIFICAÇÕES
   # ──────────────────────────────────────────
   notification:
       name: Notification
@@ -143,11 +143,11 @@ jobs:
             distribution: 'temurin'
             cache: maven
 
-        - name: Run tests with JaCoCo
+        - name: Notification script (shell)
           run: sh src/shell.sh
 
   # ──────────────────────────────────────────
-  # ETAPA 4 — DEPLOY NO GITHUB PAGES
+  # ETAPA 5 — DEPLOY NO GITHUB PAGES
   # Gera o site completo do Maven (relatório
   # de testes + cobertura + info do projeto)
   # e publica no GitHub Pages. Só executa em
@@ -158,7 +158,7 @@ jobs:
     name: Deploy Site to GitHub Pages
     needs: [ test, coverage ]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     environment:
       name: github-pages
