@@ -123,12 +123,12 @@ jobs:
 
 
 
-    # ──────────────────────────────────────────
-    # ETAPA 3 — COBERTURA DE CÓDIGO
-    # Executa os testes via JaCoCo e gera
-    # um relatório HTML de cobertura.
-    # ──────────────────────────────────────────
-    notification:
+  # ──────────────────────────────────────────
+  # ETAPA 3 — COBERTURA DE CÓDIGO
+  # Executa os testes via JaCoCo e gera
+  # um relatório HTML de cobertura.
+  # ──────────────────────────────────────────
+  notification:
       name: Notification
       needs: coverage
       runs-on: ubuntu-latest
