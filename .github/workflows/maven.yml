@@ -113,14 +113,13 @@ jobs:
       - name: Run tests with JaCoCo
         run: mvn clean verify
 
+
       - name: Upload JaCoCo HTML report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
           path: target/site/jacoco/
           retention-days: 7
-
-
 
 
   # ──────────────────────────────────────────
